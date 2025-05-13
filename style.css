@@ -29,7 +29,81 @@ footer, header, menu, nav, section, time {
   display: block;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+  header {
+    padding: 20px 20px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .carousel {
+    gap: 10px;
+  }
+
+  .destino {
+    flex: 0 0 220px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  form button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destino {
+    width: 90%;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    font-size: 0.95rem;
+  }
+
+  .whatsapp-button img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/*@media (max-width: 1200px) {
   .nav-list {
     flex-direction: column;
     align-items: center;
@@ -53,7 +127,7 @@ footer, header, menu, nav, section, time {
   .popup input[type="submit"] {
     font-size: 16px;
   }
-}
+}*/
 
 #mensagemErro {
   color: red;
@@ -345,7 +419,7 @@ a.text-item.selected {
 .col-10 {
   float: left;
   position: relative;
-  width: 504px;
+  width: auto;
 }
 .chamada {
   margin: 0 0 0 1px;
@@ -519,6 +593,8 @@ a.text-item.selected {
 .camada-953 {
   float: right;
   margin: 367px 0 0;
+  max-width: 100%;
+  height: auto;
 }
 .cta {
   margin: 20px 0 0 380px;
@@ -594,7 +670,8 @@ a.text-item.selected {
 }
 .group-2 {
   position: relative;
-}
+  width: 100%;
+ }
 .group-2 > * {
   float: left;
 }
