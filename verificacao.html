@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Código - Siga</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/objeto_inteligente_de_vet_5.png" alt="Logo Siga">
+            </div>
+            <nav class="menu">
+                <a href="index.html">HOME</a>
+                <a href="#">QUEM SOMOS</a>
+                <a href="#">SERVIÇOS</a>
+                <a href="#">FAQ</a>
+                <a href="#">CONTATO</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Verification Section -->
+    <section>
+        <div class="container">
+            <div class="verification-container">
+                <img src="images/objeto_inteligente_de_vet_5.png" alt="Logo Siga" style="height: 60px; margin-bottom: 20px;">
+                <h2>Verificação de Código</h2>
+                <p>Enviamos um código de verificação para o seu celular. Por favor, insira o código abaixo para continuar.</p>
+                
+                <div class="code-input">
+                    <input type="text" maxlength="1" autofocus>
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <button type="button" class="btn btn-block" onclick="window.location.href='painel.html'">VERIFICAR</button>
+                
+                <a href="#" class="resend-code">Não recebeu o código? Reenviar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <p>© 2025 Siga - O Melhor Amigo do Motorista LTDA.</p>
+                <p>CNPJ: XX.XXX.XXX/0001-XX</p>
+                <p>Endereço: Av. Exemplo, 123 - São Paulo - SP</p>
+            </div>
+            <div class="footer-legal">
+                <p>Nas Plataformas do Siga é possível obter serviços de empréstimos com veículo em garantia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para mover o foco para o próximo input ao digitar
+        const inputs = document.querySelectorAll('.code-input input');
+        
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', function() {
+                if (this.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && !this.value && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
