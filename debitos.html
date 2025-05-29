@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débitos - Siga</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo_correto.png" alt="Logo Siga">
+            </div>
+            <nav class="menu">
+                <a href="index.html">Início</a>
+                <a href="debitos.html" class="active">Débitos</a>
+                <a href="pedidos.html">Pedidos</a>
+                <a href="#">Serviços</a>
+            </nav>
+            <a href="#" class="app-button">Baixar o aplicativo</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <div class="container">
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Débitos do veículo</span>
+                </div>
+                <p style="font-size: 14px; color: var(--texto-secundario); margin-bottom: 20px;">Escolha os débitos que deseja pagar</p>
+
+                <div class="debts-section">
+                    <h3>Licenciamento</h3>
+                    <div class="debt-item">
+                        <div class="debt-info">
+                            <h4>2025</h4>
+                            <p>Vencimento</p>
+                        </div>
+                        <div class="debt-amount">
+                            R$ 374,53
+                        </div>
+                        <div class="debt-date">
+                            Agosto
+                        </div>
+                        <div>
+                            <input type="checkbox" checked>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="debts-section">
+                    <h3>IPVA 2025</h3>
+                    <div class="debt-item">
+                        <div class="debt-info">
+                            <h4>Cota Única</h4>
+                            <p class="expired">Vencido</p>
+                        </div>
+                        <div class="debt-amount">
+                            R$ 1.602,59
+                        </div>
+                        <div class="debt-date">
+                            17/02/2025
+                        </div>
+                        <div>
+                            <input type="checkbox" checked>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="debts-section">
+                    <h3>Débitos</h3>
+                    <div class="debt-item">
+                        <div class="debt-info">
+                            <h4>Taxa de Transferência</h4>
+                        </div>
+                        <div class="debt-amount">
+                            R$ 285,05
+                        </div>
+                        <div class="debt-date">
+                            12/06/2025
+                        </div>
+                        <div>
+                            <input type="checkbox" checked>
+                        </div>
+                    </div>
+
+                    <div class="debt-item">
+                        <div class="debt-info">
+                            <h4>Não iluminar Placa Traseira Qdo o Veíc. Estiver em Movimento</h4>
+                            <p class="expired">Vencida</p>
+                        </div>
+                        <div class="debt-amount">
+                            R$ 156,60
+                        </div>
+                        <div class="debt-date">
+                            10/07/2023
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="debt-item">
+                        <div class="debt-info">
+                            <h4>Avançar o sinal de parada obrigatória</h4>
+                            <p class="expired">Vencida</p>
+                        </div>
+                        <div class="debt-amount">
+                            R$ 320,99
+                        </div>
+                        <div class="debt-date">
+                            26/07/2024
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="debt-item">
+                        <div class="debt-info">
+                            <h4>Trans. Veloc. Super. a Máxima Permitida em Até 20%</h4>
+                            <p class="expired">Vencida</p>
+                        </div>
+                        <div class="debt-amount">
+                            R$ 135,37
+                        </div>
+                        <div class="debt-date">
+                            17/01/2025
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-calculator"></i>
+                    <span>Resumo dos valores</span>
+                </div>
+                <div class="payment-summary">
+                    <div class="summary-item">
+                        <span>Licenciamento 2025:</span>
+                        <span>R$ 374,53</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>IPVA 2025 - Cota Única:</span>
+                        <span>R$ 1.602,59</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Débitos restantes:</span>
+                        <span>R$ 898,01</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>R$ 2.875,13</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-block" style="margin-top: 20px;">Escolher forma de pagamento</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="images/logo_amarelo.png" alt="Logo Siga">
+            </div>
+            <div class="footer-info">
+                <p>© 2025 Siga - Descomplicando seu licenciamento</p>
+                <p>Rua Genaro Mentone 10, lj 03, Cipó - Embu Guaçu, CEP: 06929-035</p>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <img src="images/app-store.png" alt="App Store">
+                </div>
+                <div class="trust-badge">
+                    <img src="images/google-play.png" alt="Google Play">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
