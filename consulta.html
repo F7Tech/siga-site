@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siga - Descomplicando seu licenciamento</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo-siga.png" alt="Logo Siga">
+            </div>
+            <nav class="menu">
+                <a href="index.html" class="active">Início</a>
+                <a href="debitos.html">Débitos</a>
+                <a href="pedidos.html">Pedidos</a>
+                <a href="#">Serviços</a>
+            </nav>
+            <a href="#" class="app-button">Baixar o aplicativo</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <div class="container content-grid">
+            <!-- Coluna da esquerda -->
+            <div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fas fa-car"></i>
+                        <span>Situação do veículo</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <div class="vehicle-plate">FNN1C14</div>
+                        <div class="vehicle-model">Hb20 1.0m Comfor</div>
+                        <a href="#" class="status-badge">Licenciamento vencido</a>
+                    </div>
+                    <div class="last-update">Atualizado em: 29/05/2025 - 03:45</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Meus pedidos</span>
+                    </div>
+                    <a href="pedidos.html" style="text-decoration: none; color: var(--azul-botao); font-size: 14px; font-weight: 500;">Ver mais</a>
+                </div>
+            </div>
+
+            <!-- Coluna da direita -->
+            <div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Débitos do veículo</span>
+                    </div>
+                    <p style="font-size: 14px; color: var(--texto-secundario); margin-bottom: 20px;">Débitos disponíveis para pagamento</p>
+
+                    <div class="debts-section">
+                        <h3>Licenciamento</h3>
+                        <div class="debt-item">
+                            <div class="debt-info">
+                                <h4>2025</h4>
+                                <p>Vencimento</p>
+                            </div>
+                            <div class="debt-amount">
+                                R$ 374,53
+                            </div>
+                            <div class="debt-date">
+                                Agosto
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="debts-section">
+                        <h3>IPVA 2025</h3>
+                        <div class="debt-item">
+                            <div class="debt-info">
+                                <h4>Cota Única</h4>
+                                <p class="expired">Vencido</p>
+                            </div>
+                            <div class="debt-amount">
+                                R$ 1.602,59
+                            </div>
+                            <div class="debt-date">
+                                17/02/2025
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="debts-section">
+                        <h3>Débitos</h3>
+                        <div class="debt-item">
+                            <div class="debt-info">
+                                <h4>Taxa de Transferência</h4>
+                            </div>
+                            <div class="debt-amount">
+                                R$ 285,05
+                            </div>
+                            <div class="debt-date">
+                                12/06/2025
+                            </div>
+                        </div>
+
+                        <div class="debt-item">
+                            <div class="debt-info">
+                                <h4>Não iluminar Placa Traseira Qdo o Veíc. Estiver em Movimento</h4>
+                                <p class="expired">Vencida</p>
+                            </div>
+                            <div class="debt-amount">
+                                R$ 156,60
+                            </div>
+                            <div class="debt-date">
+                                10/07/2023
+                            </div>
+                        </div>
+
+                        <div class="debt-item">
+                            <div class="debt-info">
+                                <h4>Avançar o sinal de parada obrigatória</h4>
+                                <p class="expired">Vencida</p>
+                            </div>
+                            <div class="debt-amount">
+                                R$ 320,99
+                            </div>
+                            <div class="debt-date">
+                                26/07/2024
+                            </div>
+                        </div>
+
+                        <div class="debt-item">
+                            <div class="debt-info">
+                                <h4>Trans. Veloc. Super. a Máxima Permitida em Até 20%</h4>
+                                <p class="expired">Vencida</p>
+                            </div>
+                            <div class="debt-amount">
+                                R$ 135,37
+                            </div>
+                            <div class="debt-date">
+                                17/01/2025
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-summary">
+                        <div class="summary-item">
+                            <span>Licenciamento 2025:</span>
+                            <span>R$ 374,53</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>IPVA 2025 - Cota Única:</span>
+                            <span>R$ 1.602,59</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Débitos restantes:</span>
+                            <span>R$ 898,01</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total:</span>
+                            <span>R$ 2.875,13</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" style="margin-top: 20px;">Ir para pagamentos</button>
+                </div>
+
+                <div class="feature-cards">
+                    <div class="card feature-card">
+                        <i class="fas fa-car"></i>
+                        <h3>Monitore o seu veículo</h3>
+                        <p>Acompanhe o IPVA, Licenciamento e Multas. Quando for a hora de pagar, vamos te avisar</p>
+                        <a href="#">Ver detalhes</a>
+                    </div>
+
+                    <div class="card feature-card">
+                        <i class="fas fa-table"></i>
+                        <h3>Valor da Tabela Fipe</h3>
+                        <p>Fique por dentro dos valores atualizados</p>
+                        <a href="#">Ver detalhes</a>
+                    </div>
+
+                    <div class="card feature-card">
+                        <i class="fas fa-id-card"></i>
+                        <h3>Monitore a sua CNH</h3>
+                        <p>Acompanhe o limite de pontos e a situação da sua CNH</p>
+                        <a href="#">Ver detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="images/logo_amarelo.png" alt="Logo Siga">
+            </div>
+            <div class="footer-info">
+                <p>© 2025 Siga - Descomplicando seu licenciamento</p>
+                <p>Rua Genaro Mentone 10, lj 03, Cipó - Embu Guaçu, CEP: 06929-035</p>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <img src="images/app-store.png" alt="App Store">
+                </div>
+                <div class="trust-badge">
+                    <img src="images/google-play.png" alt="Google Play">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
