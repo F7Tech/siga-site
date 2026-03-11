@@ -1,0 +1,20 @@
+{
+  "name": "Siga Despachante",
+  "short_name": "SIGA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffe600",
+  "theme_color": "#5b2a86",
+  "icons": [
+    {
+      "src": "/images/logo-siga.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo-siga.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
