@@ -7,12 +7,12 @@
   "theme_color": "#5b2a86",
   "icons": [
     {
-      "src": "/images/iconApp-Siga.ico",
+      "src": "/images/iconApp-Siga.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/images/iconApp-Siga.ico",
+      "src": "/images/iconApp-Siga.png",
       "sizes": "512x512",
       "type": "image/png"
     }
