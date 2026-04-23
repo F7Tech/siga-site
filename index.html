@@ -14,15 +14,19 @@
 
 <link rel="manifest" href="manifest.json">
 
-<link rel="apple-touch-icon" href="images/iconApp-Siga.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/app-icons/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/app-icons/icon-180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="images/app-icons/icon-167.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/app-icons/icon-152.png">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
 <meta name="apple-mobile-web-app-title" content="SIGA">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#ffe600">
+<meta name="theme-color" content="#5b2a86">
 
 
     <link
@@ -31,7 +35,7 @@
 
 </head>
 
-<body>
+<body data-page="index">
 
     <header class="header">
   <div class="container header-container">
@@ -60,6 +64,8 @@
 
             <div class="hero-text">
 
+                <span class="hero-eyebrow">Pagamento online de débitos veiculares</span>
+
                 <h1>
                     Agora você pode pagar seu <span>licenciamento</span> direto no aplicativo
                 </h1>
@@ -68,31 +74,50 @@
                     Consulte débitos do seu veículo e resolva tudo online de forma rápida e segura.
                 </p>
 
+                <div class="hero-points">
+                    <div class="hero-point">
+                        <strong>Consulta em tempo real</strong>
+                        <span>Os dados do veículo são carregados antes da etapa de pagamento.</span>
+                    </div>
+                    <div class="hero-point">
+                        <strong>Fluxo guiado</strong>
+                        <span>Você avança direto para débitos, dados pessoais e confirmação final.</span>
+                    </div>
+                
+                </div>
+
             </div>
 
-            <div class="hero-form">
+            <div class="hero-form" id="consulta-rapida">
+
+                <div class="hero-form-top">
+                    <span class="hero-form-badge">Etapa 1 de 4</span>
+                    <p>Preencha os dados para abrir a tela de pagamento já com a consulta carregada.</p>
+                </div>
 
                 <h3>Consulte seus débitos</h3>
 
-                <form>
+                <form id="index-consulta-form" novalidate>
 
-                    <label>Renavan do veículo</label>
-                    <input type="text" placeholder="1234567890">
+                    <label for="index-renavam">RENAVAM do veículo</label>
+                    <input id="index-renavam" name="renavam" type="text" inputmode="numeric" maxlength="20" placeholder="1234567890">
+                    <div class="field-error" data-error-for="renavam"></div>
 
-                    <label>Estado</label>
-                    <select>
-                        <option>São Paulo</option>
-                        <option>Rio de Janeiro</option>
-                        <option>Minas Gerais</option>
+                    <label for="index-state">Estado</label>
+                    <select id="index-state" name="estado">
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PR">Paraná</option>
                     </select>
 
-                    <label>Celular</label>
-                    <input type="text" placeholder="(11) 99999-9999">
+                    <label for="index-email">E-mail</label>
+                    <input id="index-email" name="email" type="email" placeholder="voce@exemplo.com">
+                    <div class="field-error" data-error-for="email"></div>
 
-                    <button type="submit"><a href="consulta.html" class="botao-consulta">
-CONSULTAR DÉBITOS AGORA
-</a>
-                    </button>
+                    <div id="index-feedback" class="hero-feedback hidden" role="status" aria-live="polite"></div>
+
+                    <button type="submit" id="index-consulta-submit">CONSULTAR DÉBITOS AGORA</button>
 
                 </form>
 
@@ -211,7 +236,7 @@ CONSULTAR DÉBITOS AGORA
 
 <h2>Regularize seu veículo agora</h2>
 
-<a class="cta-button" href="#">
+<a class="cta-button" href="#consulta-rapida">
 CONSULTAR DÉBITOS
 </a>
 
@@ -253,5 +278,7 @@ CONSULTAR DÉBITOS
 
 
 </body>
+
+<script src="js/payment-flow.js" defer></script>
 
 </html>

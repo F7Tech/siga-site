@@ -3,191 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Débitos - Siga</title>
+    <title>Pagamento de Débitos - Siga</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <!-- Header -->
+<body data-page="debitos">
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="images/logo_correto.png" alt="Logo Siga">
+                <img src="images/logo-siga.png" alt="Logo Siga">
             </div>
             <nav class="menu">
                 <a href="index.html">Início</a>
-                <a href="debitos.html" class="active">Débitos</a>
+                <a href="consulta.html">Consulta</a>
+                <a href="debitos.html" class="active">Pagamento</a>
                 <a href="pedidos.html">Pedidos</a>
-                <a href="#">Serviços</a>
             </nav>
             <a href="#" class="app-button">Baixar o aplicativo</a>
         </div>
     </header>
 
-    <!-- Main Section -->
     <section class="main-section">
-        <div class="container">
-            <div class="card">
-                <div class="card-title">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Débitos do veículo</span>
-                </div>
-                <p style="font-size: 14px; color: var(--texto-secundario); margin-bottom: 20px;">Escolha os débitos que deseja pagar</p>
-
-                <div class="debts-section">
-                    <h3>Licenciamento</h3>
-                    <div class="debt-item">
-                        <div class="debt-info">
-                            <h4>2025</h4>
-                            <p>Vencimento</p>
+        <div class="container content-grid">
+            <div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fas fa-car"></i>
+                        <span>Dados do veículo</span>
+                    </div>
+                    <div id="vehicle-summary-empty" class="empty-inline">
+                        Faça a consulta primeiro para carregar o veículo.
+                    </div>
+                    <div id="vehicle-summary-content" class="hidden">
+                        <div class="vehicle-info">
+                            <div class="vehicle-model" id="vehicle-owner">-</div>
+                            <div class="vehicle-plate" id="vehicle-plate">-</div>
+                            <a href="#" class="status-badge warning" id="vehicle-status">Consulta carregada</a>
                         </div>
-                        <div class="debt-amount">
-                            R$ 374,53
+                        <div class="summary-stack">
+                            <div class="summary-item">
+                                <span>RENAVAM</span>
+                                <span id="vehicle-renavam">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Município / UF</span>
+                                <span id="vehicle-city">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Identificação</span>
+                                <span id="vehicle-identification">-</span>
+                            </div>
                         </div>
-                        <div class="debt-date">
-                            Agosto
-                        </div>
-                        <div>
-                            <input type="checkbox" checked>
-                        </div>
+                        <div class="last-update" id="vehicle-last-update"></div>
                     </div>
                 </div>
 
-                <div class="debts-section">
-                    <h3>IPVA 2025</h3>
-                    <div class="debt-item">
-                        <div class="debt-info">
-                            <h4>Cota Única</h4>
-                            <p class="expired">Vencido</p>
-                        </div>
-                        <div class="debt-amount">
-                            R$ 1.602,59
-                        </div>
-                        <div class="debt-date">
-                            17/02/2025
-                        </div>
-                        <div>
-                            <input type="checkbox" checked>
-                        </div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fas fa-list-ol"></i>
+                        <span>Etapas</span>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="progress-step done">1. Consulta</div>
+                        <div class="progress-step active" data-progress-step="2">2. Débitos e pagamento</div>
+                        <div class="progress-step" data-progress-step="3">3. Dados pessoais</div>
+                        <div class="progress-step" data-progress-step="4">4. Confirmação</div>
                     </div>
                 </div>
 
-                <div class="debts-section">
-                    <h3>Débitos</h3>
-                    <div class="debt-item">
-                        <div class="debt-info">
-                            <h4>Taxa de Transferência</h4>
-                        </div>
-                        <div class="debt-amount">
-                            R$ 285,05
-                        </div>
-                        <div class="debt-date">
-                            12/06/2025
-                        </div>
-                        <div>
-                            <input type="checkbox" checked>
-                        </div>
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contato</span>
                     </div>
-
-                    <div class="debt-item">
-                        <div class="debt-info">
-                            <h4>Não iluminar Placa Traseira Qdo o Veíc. Estiver em Movimento</h4>
-                            <p class="expired">Vencida</p>
+                    <div class="summary-stack">
+                        <div class="summary-item">
+                            <span>E-mail da consulta</span>
+                            <span id="sidebar-email">-</span>
                         </div>
-                        <div class="debt-amount">
-                            R$ 156,60
-                        </div>
-                        <div class="debt-date">
-                            10/07/2023
-                        </div>
-                        <div>
-                            <input type="checkbox">
-                        </div>
-                    </div>
-
-                    <div class="debt-item">
-                        <div class="debt-info">
-                            <h4>Avançar o sinal de parada obrigatória</h4>
-                            <p class="expired">Vencida</p>
-                        </div>
-                        <div class="debt-amount">
-                            R$ 320,99
-                        </div>
-                        <div class="debt-date">
-                            26/07/2024
-                        </div>
-                        <div>
-                            <input type="checkbox">
-                        </div>
-                    </div>
-
-                    <div class="debt-item">
-                        <div class="debt-info">
-                            <h4>Trans. Veloc. Super. a Máxima Permitida em Até 20%</h4>
-                            <p class="expired">Vencida</p>
-                        </div>
-                        <div class="debt-amount">
-                            R$ 135,37
-                        </div>
-                        <div class="debt-date">
-                            17/01/2025
-                        </div>
-                        <div>
-                            <input type="checkbox">
+                        <div class="summary-item">
+                            <span>Total selecionado</span>
+                            <span id="sidebar-total">R$ 0,00</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-title">
-                    <i class="fas fa-calculator"></i>
-                    <span>Resumo dos valores</span>
+            <div>
+                <div id="debitos-feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+
+                <div id="debitos-missing-card" class="card hidden">
+                    <div class="card-title">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Consulta necessária</span>
+                    </div>
+                    <p class="section-intro">Não há dados carregados para continuar o pagamento.</p>
+                    <a href="consulta.html" class="btn btn-primary">Voltar para consulta</a>
                 </div>
-                <div class="payment-summary">
-                    <div class="summary-item">
-                        <span>Licenciamento 2025:</span>
-                        <span>R$ 374,53</span>
+
+                <div id="step-2" class="card flow-panel">
+                    <div class="card-title">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Débitos do veículo</span>
                     </div>
-                    <div class="summary-item">
-                        <span>IPVA 2025 - Cota Única:</span>
-                        <span>R$ 1.602,59</span>
+                    <p class="section-intro">Selecione os débitos que deseja incluir no checkout link e escolha a forma de pagamento disponível.</p>
+
+                    <div id="debts-list" class="debts-list"></div>
+
+                    <div class="card-section-divider"></div>
+
+                    <div class="card-title secondary">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Forma de pagamento</span>
                     </div>
-                    <div class="summary-item">
-                        <span>Débitos restantes:</span>
-                        <span>R$ 898,01</span>
+                    <div id="payment-methods" class="payment-methods"></div>
+
+                    <div class="payment-summary">
+                        <div id="summary-lines"></div>
+                        <div class="summary-total">
+                            <span>Total selecionado</span>
+                            <span id="selected-total">R$ 0,00</span>
+                        </div>
                     </div>
-                    <div class="summary-total">
-                        <span>Total</span>
-                        <span>R$ 2.875,13</span>
+
+                    <div class="form-actions split">
+                        <a href="consulta.html" class="btn btn-secondary">Voltar</a>
+                        <button type="button" id="go-to-personal" class="btn btn-primary">Continuar para dados pessoais</button>
                     </div>
                 </div>
 
-                <button class="btn btn-primary btn-block" style="margin-top: 20px;">Escolher forma de pagamento</button>
+                <div id="step-3" class="card flow-panel hidden">
+                    <div class="card-title">
+                        <i class="fas fa-user"></i>
+                        <span>Dados pessoais</span>
+                    </div>
+                    <p class="section-intro">Esses dados ficam vinculados ao fluxo do pedido e ao envio do checkout link por e-mail.</p>
+
+                    <form id="personal-form" novalidate>
+                        <div class="form-grid">
+                            <div class="form-group form-group-full">
+                                <label for="full-name">Nome completo</label>
+                                <input id="full-name" name="nome" type="text" maxlength="120" autocomplete="name" placeholder="Nome completo">
+                                <p class="field-error" data-error-for="nome"></p>
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="delivery-cep">CEP para entrega</label>
+                                <div class="input-with-action">
+                                    <input id="delivery-cep" name="cep" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000">
+                                    <button type="button" id="lookup-cep" class="btn btn-secondary btn-inline">Buscar CEP</button>
+                                </div>
+                                <p class="field-error" data-error-for="cep"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-number">Número</label>
+                                <input id="delivery-number" name="numero" type="text" maxlength="20" autocomplete="address-line2" placeholder="Número">
+                                <p class="field-error" data-error-for="numero"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-complement">Complemento</label>
+                                <input id="delivery-complement" name="complemento" type="text" maxlength="120" autocomplete="address-line2" placeholder="Apto, bloco, casa, referência">
+                                <p class="field-error" data-error-for="complemento"></p>
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <div id="cep-feedback" class="feedback hidden feedback-inline" role="status" aria-live="polite"></div>
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="delivery-street">Logradouro</label>
+                                <input id="delivery-street" name="logradouro" type="text" maxlength="255" autocomplete="address-line1" placeholder="Rua, avenida ou travessa" readonly>
+                                <p class="field-error" data-error-for="logradouro"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-neighborhood">Bairro</label>
+                                <input id="delivery-neighborhood" name="bairro" type="text" maxlength="120" autocomplete="address-level3" placeholder="Bairro" readonly>
+                                <p class="field-error" data-error-for="bairro"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-city">Cidade</label>
+                                <input id="delivery-city" name="cidade" type="text" maxlength="120" autocomplete="address-level2" placeholder="Cidade" readonly>
+                                <p class="field-error" data-error-for="cidade"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-state">UF</label>
+                                <input id="delivery-state" name="uf" type="text" maxlength="2" autocomplete="address-level1" placeholder="UF" readonly>
+                                <p class="field-error" data-error-for="uf"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="personal-email">E-mail</label>
+                                <input id="personal-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com">
+                                <p class="field-error" data-error-for="email"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="personal-email-confirm">Confirmação de e-mail</label>
+                                <input id="personal-email-confirm" name="confirmEmail" type="email" autocomplete="email" placeholder="Repita o e-mail">
+                                <p class="field-error" data-error-for="confirmEmail"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="personal-phone">Telefone</label>
+                                <input id="personal-phone" name="telefone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="15" placeholder="(11) 99999-9999">
+                                <p class="field-error" data-error-for="telefone"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-actions split">
+                            <button type="button" id="back-to-debts" class="btn btn-secondary">Voltar para débitos</button>
+                            <button type="submit" class="btn btn-primary">Revisar e gerar checkout</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="step-4" class="card flow-panel hidden">
+                    <div class="card-title">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Confirmação final</span>
+                    </div>
+                    <div id="checkout-review-state">
+                        <p class="section-intro">Revise os dados abaixo. O checkout link será enviado para o e-mail informado.</p>
+
+                        <div class="review-grid">
+                            <div class="review-card">
+                                <h3>Débitos selecionados</h3>
+                                <div id="review-debts" class="summary-stack"></div>
+                            </div>
+                            <div class="review-card">
+                                <h3>Dados pessoais</h3>
+                                <div id="review-personal" class="summary-stack"></div>
+                            </div>
+                        </div>
+
+                        <div class="payment-summary">
+                            <div class="summary-total">
+                                <span>Total do checkout</span>
+                                <span id="review-total">R$ 0,00</span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions split">
+                            <button type="button" id="back-to-personal" class="btn btn-secondary">Voltar para dados</button>
+                            <button type="button" id="submit-checkout" class="btn btn-primary">Enviar checkout link</button>
+                        </div>
+
+                        <div id="checkout-result" class="feedback hidden" role="status" aria-live="polite"></div>
+                    </div>
+
+                    <div id="checkout-success-state" class="hidden">
+                        <div class="success-panel">
+                            <div class="success-icon" aria-hidden="true">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <h3>Solicitação enviada com sucesso</h3>
+                            <p class="success-message">Enviamos o link de pagamento para o e-mail informado.</p>
+                            <p class="success-note">Caso não encontre, verifique também a caixa de spam.</p>
+                        </div>
+
+                        <div class="review-card success-details">
+                            <div class="summary-stack">
+                                <div class="summary-item">
+                                    <span>E-mail enviado</span>
+                                    <span id="success-email">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Protocolo</span>
+                                    <span id="success-protocol">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Status</span>
+                                    <span id="success-status">Aguardando confirmação</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="checkout-success-feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+
+                        <div class="form-actions">
+                            <button type="button" id="restart-flow" class="btn btn-primary btn-block">Reiniciar fluxo</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container footer-container">
             <div class="footer-logo">
-                <img src="images/logo_amarelo.png" alt="Logo Siga">
+                <img src="images/logo-siga.png" alt="Logo Siga">
             </div>
             <div class="footer-info">
-                <p>© 2025 Siga - Descomplicando seu licenciamento</p>
+                <p>© 2026 Siga - Descomplicando seu licenciamento</p>
                 <p>Rua Genaro Mentone 10, lj 03, Cipó - Embu Guaçu, CEP: 06929-035</p>
-            </div>
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <img src="images/app-store.png" alt="App Store">
-                </div>
-                <div class="trust-badge">
-                    <img src="images/google-play.png" alt="Google Play">
-                </div>
             </div>
         </div>
     </footer>
+
+    <script src="js/payment-flow.js" defer></script>
 </body>
 </html>
