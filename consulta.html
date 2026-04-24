@@ -72,7 +72,6 @@
                     <ul class="info-list">
                         <li>Use o RENAVAM completo do veículo.</li>
                         <li>O e-mail será reutilizado nas próximas etapas.</li>
-                        <li>Em caso de indisponibilidade, uma mensagem será exibida na tela.</li>
                     </ul>
                 </div>
             </div>
@@ -83,19 +82,19 @@
                         <i class="fas fa-search"></i>
                         <span>Consultar débitos</span>
                     </div>
-                    <p class="section-intro">Comece pela consulta do veículo para carregar os débitos disponíveis para pagamento.</p>
+                    <p class="section-intro">Comece pela consulta do veículo para carregar os débitos reais retornados pelo backend.</p>
 
                     <form id="consulta-form" novalidate>
                         <div class="form-grid single-column">
                             <div class="form-group">
                                 <label for="renavam">RENAVAM</label>
-                                <input id="renavam" name="renavam" type="text" inputmode="numeric" maxlength="11" autocomplete="off" placeholder="Digite o RENAVAM">
+                                <input id="renavam" name="renavam" type="text" inputmode="numeric" maxlength="20" placeholder="Digite o RENAVAM">
                                 <p class="field-error" data-error-for="renavam"></p>
                             </div>
 
                             <div class="form-group">
                                 <label for="consulta-email">E-mail</label>
-                                <input id="consulta-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com">
+                                <input id="consulta-email" name="email" type="email" placeholder="voce@exemplo.com">
                                 <p class="field-error" data-error-for="email"></p>
                             </div>
                         </div>
