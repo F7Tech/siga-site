@@ -982,7 +982,7 @@
 
                 try {
                     response = await fetch(baseUrl + path, {
-                        method: requestOptions.method || "GET",
+                        method: requestOptions.method || "POST",
                         headers: headers,
                         body: requestOptions.body,
                         signal: controller ? controller.signal : undefined
