@@ -958,7 +958,7 @@
             return "http://localhost:8080";
         }
 
-        return "http://35.185.125.121:8080";
+        return "https://api.sigabr.online";
     }
 
     function resolveCepApiBase() {

@@ -33,8 +33,8 @@ São persistidos:
 
 ## Endpoints usados
 
-- `POST http://35.185.125.121:8080/consulta`
-- `POST http://35.185.125.121:8080/pagamentos/checkout-link`
+- `POST https://api.sigabr.online/consulta`
+- `POST https://api.sigabr.online/pagamentos/checkout-link`
 - `GET {SIGA_CEP_API_BASE ou SIGA_API_BASE}/enderecos/cep/{cep}`
 
 ## Estrutura principal
